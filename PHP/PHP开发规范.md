@@ -1,6 +1,6 @@
 # PHP开发规范
 ### 基本约定
-1. ```PHP```源文件
+1. 源文件
     - 代码使用```<?php```开头，忽略闭合标签```?>```
     - 文件格式必须是无```BOM``` ```UTF-8```格式
     - 一个文件只声明一种类型，如```class```和```interface```不能混写在一个源文件中
@@ -31,8 +31,10 @@
     namespace app\exceptions\codes;
     
     class UserExceptionCode extends BaseExceptionCode {
-        const NO_AUTH          = 1000001;// 不具有权限
-        const STATUS_EXCEPTION = 1000002;// 状态异常
+        const NO_AUTH              = 1000001;
+        const NO_AUTH_MSG          = '不具有权限';
+        const STATUS_EXCEPTION     = 1000002;
+        const STATUS_EXCEPTION_MSG = '状态异常';        
     }
     ```
     - 数据表文件如有```Enum```类型，使用```PHP```类常量代替，如
@@ -51,3 +53,20 @@
     }
     ```
     其中```STATUS```和```AUTH```为数据表映射字段名
+    - ```Api```接口输出，示例
+    ```
+    {
+        "code" : 0,
+        "msg" : "success",
+        "data" : {
+            "user_id" : 100
+        }
+    }
+    ```
+    其中```code```与```msg```为必填字段，```data```为空的情况下不填，示例
+    ```
+    {
+        "code" : 100001,
+        "msg" : "不具有权限"
+    }
+    ```
