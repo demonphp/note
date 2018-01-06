@@ -4,10 +4,18 @@ SQL注入是通过web表单或其它方式来模拟请求等方式达到执行�
 ```
 mysql_query("INSERT INTO `user` ( username ) VALUES ('" . $username . "')");
 ```
-假如客户端输入的是```qiaoweizhen'); DROP TABLE user#```最终拼接而成的sql是```INSERT INTO `user` (username) VALUES ('VALUE');DROP TABLE user;#')```，执行之后将会把user表删除
+假如客户端输入的是
+```
+qiaoweizhen'); DROP TABLE user#
+```
+最终拼接而成的SQL是
+```
+INSERT INTO `user` (username) VALUES ('VALUE');DROP TABLE user;#')
+```
+执行之后将会把user表删除
 ### 防止SQL注入
 1. 前端校验
-    - 对参数类型校验，如只能填写数字的不需要出现其它字符
+    - 对参数类型校验，如只能填写数字的不要出现其它字符
 2. 服务端校验
     1. 输入过滤
         - 通过PHP自带函数或自定义校验库对参数格式校验
