@@ -5,3 +5,6 @@
   - [Vim常用命令](Linux/Vim常用命令.md)
 - [MySQL](MySQL)
   - [数据库索引注意事项](MySQL/数据库索引注意事项.md)
+- [PHP](PHP)
+  - [PHP开发规范](PHP/PHP开发规范.md)
+  - [PHP防止SQL注入](PHP/PHP防止SQL注入.md)
