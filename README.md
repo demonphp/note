@@ -9,3 +9,4 @@
   - [PHP开发规范](PHP/PHP开发规范.md)
   - [PHP防止SQL注入](PHP/PHP防止SQL注入.md)
   - [CSRF原理及防御方法](PHP/CSRF原理及防御方法.md)
+  - [PHP页面静态化原理](PHP/PHP页面静态化原理.md)
