@@ -5,14 +5,14 @@ SELECT * FROM `e_orders` WHERE `status` != 0 AND `stauts` != 1;
 ```
 ```NOT IN```和```NOT EXISTS```一样，可以优化为```IN```查询语句：
 ```
-SELECT * FROM `e_orders` WHERE `status` IN (2,3);
+SELECT * FROM `e_orders` WHERE `status` IN (2,3);
 ```
 
 ### 模糊查询前置```%```不能使用索引
 
 ```
-SELECT * FROM `e_orders` WHERE `product_name` LIKE '%全新';
-SELECT * FROM `e_orders` WHERE `product_name` LIKE '%全新%';
+SELECT * FROM `e_orders` WHERE `product_name` LIKE '%全新';
+SELECT * FROM `e_orders` WHERE `product_name` LIKE '%全新%';
 ```
 非前置```%```则可以：
 ```
@@ -64,7 +64,7 @@ SELECT * FROM `user` WHERE `username` != 'admin';
 
 用户user建立(username, password)的复合索引
 ```
-SELECT * FROM `user` WHERE `username` = 'admin' AND password = 'e10adc3949ba59abbe56e057f20f883e';
+SELECT * FROM `user` WHERE `username` = 'admin' AND `password` = 'e10adc3949ba59abbe56e057f20f883e';
 SELECT * FROM `user` WHERE `password` = 'e10adc3949ba59abbe56e057f20f883e' AND `username` = 'admin';
 ```
 都能够命中索引
@@ -92,7 +92,7 @@ SELECT * FROM `user` WHERE `username` = 'admin' LIMIT 1;
 ```
 原因：你知道只有一条结果，但数据库并不知道，明确告诉它，让它主动停止游标移动
 
-### 禁止数据库业务逻辑操作
+### 禁止数据库业务逻辑操作
 
 ```
 SELECT * FROM `e_order` WHERE `date` <= CURDATE();
@@ -124,8 +124,8 @@ SELECT * FROM `user` WHERE `phone` = '18817771888';
 
 ### 使用```EXPLAIN/DESC```查看```SQL```执行计划
 
-```
-DESC SELECT * FROM `user` WHERE `username` = 'admin';
+```
+DESC SELECT * FROM `user` WHERE `username` = 'admin';
 ```
 
 ### 数据量比较少的表不适宜建索引
