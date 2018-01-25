@@ -6,6 +6,7 @@
   - [Docker常用命令](Linux/Docker常用命令.md)
 - [MySQL](MySQL)
   - [数据库索引注意事项](MySQL/数据库索引注意事项.md)
+  - [SQL优化技巧](MySQL/SQL优化技巧.md)
 - [PHP](PHP)
   - [PHP开发规范](PHP/PHP开发规范.md)
   - [PHP防止SQL注入](PHP/PHP防止SQL注入.md)
