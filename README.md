@@ -1,4 +1,7 @@
 # 笔记
+> 源于工作与学习
+>
+> 转载文章有备注
 - [Linux](Linux)
   - [Linux文件权限](Linux/Linux文件权限.md)
   - [crontab使用方法](Linux/crontab使用方法.md)
@@ -12,3 +15,5 @@
   - [PHP防止SQL注入](PHP/PHP防止SQL注入.md)
   - [CSRF原理及防御方法](PHP/CSRF原理及防御方法.md)
   - [PHP页面静态化原理](PHP/PHP页面静态化原理.md)
+- [架构](架构)
+  - [数据传输安全](架构/数据传输安全.md)
