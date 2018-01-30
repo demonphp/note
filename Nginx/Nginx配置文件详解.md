@@ -1,19 +1,22 @@
 ### nginx配置文件详解
 ```
 # 运行用户
-user www;
+user    www;
 
 # 启动进程,通常设置成和cpu的数量相等,或设置为auto
-worker_processes 1;
+worker_processes    1;
 
-# 全局错误日志及PID文件位置
-# error_log  /var/wwwlogs/error.log;
-# error_log  /var/wwwlogs/error.log  notice;
-# error_log  /var/wwwlogs/error.log  info;
-# pid        /var/wwwlogs/nginx.pid;
+# 设置全局错误日志存储位置
+# error_log     /var/wwwlogs/error.log;
+# error_log     /var/wwwlogs/error.log  notice;
+# error_log     /var/wwwlogs/error.log  info;
+
+# 设置pid文件存储位置
+# pid   /var/wwwlogs/nginx.pid;
 
 # 工作模式及连接数上限
 events {
+
     # epoll是多路复用IO(I/O Multiplexing)中的一种方式
     use   epoll; 
 
@@ -32,13 +35,11 @@ events {
 http {
 
     # 设定mime类型,类型由mime.type文件定义
-    include    mime.types;
-    default_type  application/octet-stream;
+    include         mime.types;
+    default_type    application/octet-stream;
 
     # 设定日志格式
-    log_format  main  '$remote_addr - $remote_user [$time_local] "$request" '
-                      '$status $body_bytes_sent "$http_referer" '
-                      '"$http_user_agent" "$http_x_forwarded_for"';
+    log_format  main  '$remote_addr - $remote_user [$time_local] "$request" ' '$status $body_bytes_sent "$http_referer" ' '"$http_user_agent" "$http_x_forwarded_for"';
 
     # 日志存储路径与格式
     access_log  /var/wwwlogs/access.log  main;
@@ -51,12 +52,11 @@ http {
     # tcp_nopush    on;
 
     # 连接超时时间
-    keepalive_timeout   65;
+    keepalive_timeout   60;
     tcp_nodelay         on;
 
     # 开启gzip压缩
     gzip                on;
-    gzip_disable        "MSIE [1-6].";
     gzip_min_length     1k;
     gzip_buffers        4 16k;
     gzip_http_version   1.0;
@@ -70,8 +70,10 @@ http {
 
     # 设定虚拟主机配置
     server {
+
         # 监听80端口
         listen    80;
+
         # 定义域名 www.test.com 多个使用空格隔开
         server_name  www.test.com;
 
