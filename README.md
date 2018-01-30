@@ -7,6 +7,8 @@
   - [crontab使用方法](Linux/crontab使用方法.md)
   - [Vim常用命令](Linux/Vim常用命令.md)
   - [Docker常用命令](Linux/Docker常用命令.md)
+- [Nginx](Nginx)
+  - [nginx配置文件详解](Nginx/Nginx配置文件详解.md)
 - [MySQL](MySQL)
   - [数据库索引注意事项](MySQL/数据库索引注意事项.md)
   - [SQL优化技巧](MySQL/SQL优化技巧.md)
