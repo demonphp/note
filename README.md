@@ -18,6 +18,7 @@
   - [CSRF原理及防御方法](PHP/CSRF原理及防御方法.md)
   - [PHP页面静态化原理](PHP/PHP页面静态化原理.md)
   - [Ajax跨域原理及解决方案](PHP/Ajax跨域原理及解决方案.md)
+  - [PHP使用ActiveMQ实例](PHP/PHP使用ActiveMQ实例.md)
 - [架构](架构)
   - [数据传输安全](架构/数据传输安全.md)
   - [消息队列两种模型](架构/消息队列两种模型.md)
