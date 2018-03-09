@@ -22,9 +22,10 @@ PUT/PATCH   /users/1                更新ID为1的用户
 GET         /classes/11/students/22 获取班级ID为11的学号为22的学生信息
 ```
 HTTP请求方法
+
 方法 | 副作用 | 幂等方法
-- | :-: | -: | -:
-GET | N | Y
+-: | -: | -:
+GET | N | Y
 POST | Y | N
 PUT | Y| N 
 DELETE | Y | N
@@ -39,11 +40,11 @@ GET     /users      获取全部用户
 POST    /users      新建用户
 ```
 多次调用会产生多条数据，顾要有防重机制
-- 【PUT/PATCH】更新资源，有副作用，非幂等方法
+- 【PUT/PATCH】更新资源，有副作用，非幂等方法
 ```
 PUT     /users/1    更新ID为1的用户信息
 ```
-多次调用会产生不同的效果，PUT用于全量更新，PATCH用于部分更新
+多次调用会产生不同的效果，PUT用于全量更新，PATCH用于部分更新
 - 【DELETE】删除资源，有副作用，非幂等方法
 ```
 DELETE  /users/1    删除ID为1的用户信息
@@ -51,7 +52,7 @@ DELETE  /users/1    删除ID为1的用户信息
 多次调用产生不同效果，如第一次成功，以后返回404
 
 ### 其它
-REST 风格的接口地址，表示的可能是单个资源，也可能是资源的集合，这个时候就需要良好的接口参数设计，如搜索、排序、分页等，示例
+REST 风格的接口地址，表示的可能是单个资源，也可能是资源的集合，这个时候就需要良好的接口参数设计，如搜索、排序、分页等，示例
 ```
-GET    /users?keyword=xiaoli&sort=asc&limit10&offset=0
+GET    /users?keyword=xiaoli&sort=asc&limit10&offset=0
 ```
